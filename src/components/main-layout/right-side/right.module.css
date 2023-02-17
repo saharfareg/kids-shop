@@ -1,0 +1,13 @@
+.span-ul{
+    position: absolute;
+    top: 13px;
+    right: 1px;
+    width: 13px;
+    height: 13px;
+}
+.span-ul-close{
+    background-image: url(./ul-image-close.gif);
+}
+.span-ul-open{
+    background-image: url(./ul-image-open.gif);
+}

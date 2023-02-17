@@ -1,0 +1,25 @@
+
+.more-info{
+   color:black;
+   background-color: aliceblue;
+   padding: 2% 5%; 
+   text-decoration:none ;
+   border-radius: 5px;
+
+}
+.div-container{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.cardcustom:hover .div-container{
+    transition: 0.5s;
+    opacity: 1;
+}

@@ -1,38 +1,13 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'vazir';
+  font-display:swap;
+	src: url("./fonts/Vazir.eot")format('embeded-opentype'),
+    url("./fonts/Vazir.ttf")format('truetype'),
+    url("./fonts/Vazir.woff")format('woff'),
+    url("./fonts/Vazir.woff2")format('woff2');
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+*{direction: rtl;font-family: 'vazir';--maincolor1:#ae0b4f;--maincolor2:midnightblue;--maincolor3:darkorange;scroll-behavior: smooth}
+.maincolor1{background-color: var(--maincolor1) !important;}
+.maincolor2{background-color: var(--maincolor2) !important ;}
+.maincolor3{background-color: var(--maincolor3) !important ;}
