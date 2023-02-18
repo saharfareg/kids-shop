@@ -1,15 +1,15 @@
 import React from 'react'
 import { Container,Col, Row } from "react-bootstrap";
-import {CloseButton} from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import { useContext } from 'react';
 import {ProductsContext} from '../../context/products-context'
+import headerStyle from './header.module.css'
 
 export const MyBasket = () => {
     
     return (
-   <>salam</>
+   <div className={`${headerStyle['basket']}`}>
+
+   </div>
     )
   }
   

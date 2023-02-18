@@ -5,8 +5,32 @@
     text-align: center;
     border-color:var(--maincolor3);
 }
-
-
+.basket{    
+        position: absolute;
+        left: 0;
+      
+        width: 400px;
+        height: 67vh;
+        z-index: 999;
+       
+        background: #fff;
+        top: 110px;
+        overflow-y: scroll;
+        box-shadow: 0 1px 1px rgb(0 0 0 / 14%), 0 4px 8px rgb(0 0 0 / 30%);
+        border-radius: 4px;
+      }
+.shoping-icon{
+        background-color: darkorange;
+        color: white;
+        border-radius: 5px;
+        padding: 6px;
+}
+.f-color-white{
+        color: white;
+}
+.button-form:hover{
+        background-color: var(--maincolor3) !important ;
+         color:white}
 /**animation heartbeat*/
 .animate:hover {
 	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;

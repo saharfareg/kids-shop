@@ -9,34 +9,28 @@ import {ProductsContext} from '../../context/products-context'
 import { HeaderUnder2 } from './header-under2'
 import {productGirl} from '../../datas/girls/datas-girls'
 import {productBoy} from '../../datas/boys/datas-boys'
+import { FaShoppingCart } from 'react-icons/fa';
+import {MyBasket} from './mybasket'
 
 export const Header = () => {
 
   const alldataHeader= useContext(ProductsContext)
 
   const girlshandler=()=>{
-    //alldataHeader.setallproductsApp(alldataHeader.allproductsApp) 
-    //console.log('girls')
+    
     alldataHeader.setisBoys(false)
     alldataHeader.setisGirls(true)
     alldataHeader.setgenderStatus('girls')
   }
   const boysshandler=()=>{
-    //alldataHeader.setallproductsApp(alldataHeader.allproductsApp)  
-    //console.log('boys')
+  
     alldataHeader.setisBoys(true)
     alldataHeader.setisGirls(false)
     alldataHeader.setgenderStatus('boys')
   }
-
+//--------------
   const shoeshandlerboys=(gender,shoes)=>{
-      //alldataHeader.setallproductsApp([...productGirl,...productBoy]) 
-      //console.log(alldataHeader.allproductsApp)
-      //console.log(gender)
-      //console.log(alldataHeader.allproductsApp)
-      //let jadid=[...alldataHeader.allproductsApp].filter(pr=>(pr.maincategory==='shoes' && pr.category===gender))
-      //console.log(jadid)
-    // alldataHeader.setallproductsApp(jadid)
+    console.log(alldataHeader.maincategoryApp)
     alldataHeader.setmaincategoryApp(['shoes'])
     console.log(alldataHeader.maincategoryApp)
     
@@ -51,13 +45,36 @@ export const Header = () => {
     alldataHeader.setisGirls(true)
     alldataHeader.setgenderStatus('girls')
   }
+ 
+
+  const showbasket=()=>{
+    console.log('basket')
+    alldataHeader.setisShowbag(!alldataHeader.isShowbag)
+  }
+
   return (
     <>
     <MyNavBar></MyNavBar>
     <Container fluid >
-      <Row >    
-        <Col md={6} className='mx-auto text-center'>
+      <Row className='mb-3 align-items-center'> 
+        <Col xs={1} md={3} className='mx-auto text-center'>
+          
+        </Col>   
+        <Col xs={9} md={6} className='mx-auto text-center'>
           <HeaderUnder1/>
+        </Col>
+        <Col xs={2} md={3} className='mx-auto text-center'>
+          <Row>
+            <Col></Col>
+            <Col></Col>
+            <Col>
+            <a className={`${headerStyle['shoping-icon']}`} onClick={showbasket} title='سبد خرید'> <FaShoppingCart className={`${headerStyle['f-color-white']}`}></FaShoppingCart> </a>
+          {alldataHeader.isShowbag && (
+            <MyBasket></MyBasket>
+          )}
+            </Col>
+          </Row>
+         
         </Col>
       </Row>
       <Row>
