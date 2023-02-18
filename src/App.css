@@ -11,3 +11,17 @@
 .maincolor1{background-color: var(--maincolor1) !important;}
 .maincolor2{background-color: var(--maincolor2) !important ;}
 .maincolor3{background-color: var(--maincolor3) !important ;}
+.fs-8 {
+  font-size: 0.8rem!important;
+}
+.basket{    
+  position: absolute;
+  left: 0;
+  border: 2px solid black;
+  width: 500px;
+  height: 67vh;
+  z-index: 999;
+  background-color: antiquewhite;
+  top: 56px;
+  overflow-y: scroll;
+}

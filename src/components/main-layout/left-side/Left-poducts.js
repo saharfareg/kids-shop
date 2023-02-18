@@ -9,7 +9,7 @@ export const LeftProducts=()=> {
   
   return (
     
-    <Row xs={1} md={3} className="g-4">
+    <Row sm={2} md={3} lg={4} className="g-4">
       {LeftProducts.genderStatus==='all' &&
       LeftProducts.allproductsApp.map(pr=>(
         <Product src={pr.img} price={pr.price} subtitle={pr.subtitle}/>

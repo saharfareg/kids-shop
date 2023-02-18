@@ -1,9 +1,9 @@
 .img-header{
-    padding: 18px;
+    padding: 8% 8%;
     border: 2px solid #f1f1f1;
     border-radius: 50%;
     text-align: center;
-    border-color: #FFD91C;
+    border-color:var(--maincolor3);
 }
 
 

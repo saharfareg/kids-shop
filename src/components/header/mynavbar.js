@@ -3,7 +3,17 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import pic from './abr-sefid-.svg'
 import logo from './logo.jpg'
+import {MyBasket} from './mybasket'
+import { useContext } from 'react';
+import {ProductsContext} from '../../context/products-context'
+
 export const MyNavBar= ()=> {
+  const usecontextmynavbar=useContext(ProductsContext)
+
+  const showbasket=()=>{
+    console.log('basket')
+    usecontextmynavbar.setisShowbag(true)
+  }
   return (
     <>
     <Navbar collapseOnSelect expand="lg" bg="" variant="" >
@@ -23,9 +33,12 @@ export const MyNavBar= ()=> {
           </Nav>
           <Nav>
             
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link eventKey={2} href="#memes" onClick={showbasket}>
                سبد خرید  
             </Nav.Link>
+            {usecontextmynavbar.isShowbag && (
+            <MyBasket></MyBasket>
+          )}
           </Nav>
         </Navbar.Collapse>
       </Container>

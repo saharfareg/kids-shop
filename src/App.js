@@ -16,7 +16,8 @@ function App() {
   const[productGirlApp,setproductGirlApp]=useState([])
   const[productBoyApp,setproductBoyApp]=useState([])
   const[allproductsApp,setallproductsApp]=useState([])
-  
+  const[isShowbag,setisShowbag]=useState(false)
+
   const[isGirls,setisGirls]=useState(false)
   const[isBoys,setisBoys]=useState(false) 
   
@@ -67,7 +68,8 @@ useEffect(()=>{
     isBoys,setisBoys,
     genderStatus,setgenderStatus,
     allMaincategoriesApp,setallMaincategoriesApp,
-    allSubCategoriesApp,setallSubCategoriesApp
+    allSubCategoriesApp,setallSubCategoriesApp,
+    isShowbag,setisShowbag
   }
 
   return (
