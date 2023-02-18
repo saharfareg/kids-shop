@@ -33,7 +33,7 @@ function App() {
   //console.log(maincategoryRepeated) 
   const allMaincategories=['all',...new Set(maincategoryRepeated)]
   //console.log(allMaincategories)
-  const[allMaincategoriesApp,setallMaincategoriesApp]=useState(allMaincategories) 
+  const[allMaincategoriesApp,setallMaincategoriesApp]=useState([]) 
   //console.log(allMaincategoriesApp)
 
   //----------- subcategory -----
@@ -54,10 +54,13 @@ useEffect(()=>{
     setproductGirlApp(res.data.filter(pr=>pr.category=== 'girls' ))
     //console.log(productGirlApp)
     console.log(['all', ...new Set(res.data.map(pr=>pr.category))])
-    setallCategoriesApp(['all', ...new Set(res.data.map(pr=>pr.category))]) 
+    //setallCategoriesApp(['all', ...new Set(res.data.map(pr=>pr.category))]) 
     console.log(allCategoriesApp)
   })
 },[])
+    //console.log(allproductsApp.map(pr=>pr.category))
+    //setallCategoriesApp(['all', ...new Set(allproductsApp.map(pr=>pr.category))])
+    //console.log(allCategoriesApp)
 
   const alldata={
     allproductsApp,setallproductsApp,

@@ -30,13 +30,19 @@ export const Header = () => {
   }
 //--------------
   const shoeshandlerboys=(gender,shoes)=>{
-    console.log(alldataHeader.maincategoryApp)
-    alldataHeader.setmaincategoryApp(['shoes'])
-    console.log(alldataHeader.maincategoryApp)
+    //console.log(alldataHeader.maincategoryApp)
+    //alldataHeader.setmaincategoryApp(['shoes'])
+    //console.log(alldataHeader.maincategoryApp)
     
     alldataHeader.setisBoys(true)
     alldataHeader.setisGirls(false)
     alldataHeader.setgenderStatus('boys')
+    console.log(alldataHeader.allproductsApp)
+    console.log([...new Set(alldataHeader.allproductsApp.map(pr=>pr.category))])
+    alldataHeader.setallMaincategoriesApp([...new Set(alldataHeader.allproductsApp.map(pr=>pr.category))])
+  
+    console.log(alldataHeader.allMaincategoriesApp)
+
   }
   const shoeshandlergirls=(gender,shoes)=>{
     alldataHeader.setmaincategoryApp(['shoes'])

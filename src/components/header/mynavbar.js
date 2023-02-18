@@ -2,10 +2,13 @@ import { Container,Row,Col } from "react-bootstrap";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './logo.jpg'
-
+import {GiHamburgerMenu} from 'react-icons/gi'
 
 export const MyNavBar= ()=> {
- 
+  
+ const hamburgerMenuHandler=(e)=>{
+  console.log('ham')
+ }
   return (
     <>
     <Navbar collapseOnSelect expand="lg" bg="" variant="" >
@@ -13,7 +16,7 @@ export const MyNavBar= ()=> {
           <Navbar.Brand href="#home">
         <img alt="logo" src={logo} width="30"height="30"className="d-inline-block align-top"/>{' '}
        </Navbar.Brand> 
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle  children={<GiHamburgerMenu/>}  onclick={hamburgerMenuHandler.bind(this)} aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#features">محصولات</Nav.Link>
