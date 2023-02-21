@@ -33,6 +33,7 @@ function App() {
   
   const[genderStatus,setgenderStatus]=useState('all')
   const[basket,setbasket]=useState([])
+  const [isLoading, setIsLoading] = useState(true)
   //---------  category -----
   const[allCategoriesApp,setallCategoriesApp]=useState([])
   //----------- maincategory ------------------
@@ -48,7 +49,9 @@ function App() {
   //----------------------
   const loadProducts=()=>{
     axios.get(`${API_URL}/products`).then((res) =>{
+      setIsLoading(true)
     setallproductsApp(res.data)
+    setIsLoading(false)
     })
   }
     useEffect(()=>{
@@ -74,7 +77,8 @@ function App() {
     btncollapseRightSide,setbtncollapseRightSide,
     collapseRightSide,setcollapseRightSide,
     searchInput,setsearchInput,
-    isShowToast,setisShowToast
+    isShowToast,setisShowToast,
+    isLoading, setIsLoading
   }
 
   return (

@@ -29,10 +29,7 @@ input[type="checkbox"] {
 .check-box-color{
   accent-color: #9b59b6
 }
-::placeholder {
-  color: red;
-  opacity: 1; /* Firefox */
-}
+
 .width-50{width: 50%;}
 
 @media (max-width: 992px){
