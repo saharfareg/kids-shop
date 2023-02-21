@@ -7,13 +7,11 @@ import headerStyle  from './header.module.css'
 import { useContext } from 'react'
 import {ProductsContext} from '../../context/products-context'
 import { HeaderUnder2 } from './header-under2'
-import {productGirl} from '../../datas/girls/datas-girls'
-import {productBoy} from '../../datas/boys/datas-boys'
 import { FaShoppingCart } from 'react-icons/fa';
 import {MyBasket} from './mybasket'
-import pic1 from  './abr-sefid-.jpg'
 import axios from 'axios'
 import { useEffect } from 'react';
+import { ThemeToggle } from '../theme-switch/theme-switch'
 import { API_URL } from '../../constants/constants';
 export const Header = () => {
   const alldataHeader= useContext(ProductsContext)
@@ -45,14 +43,26 @@ export const Header = () => {
     console.log('basket')
     alldataHeader.setisShowbag(!alldataHeader.isShowbag)
   }
-//-------------------
+//--------- themetoggle----------
+const themeToggleHandler =(e) =>{ 
+ e.target.checked ? (console.log('dark')) : (console.log('light'))
+ alldataHeader.setisThemeDark(!alldataHeader.isThemeDark)
+}
+
   return (
     <>
     <MyNavBar></MyNavBar>
     <Container fluid >
       <Row className='mb-3 align-items-center'>    
-        <Col xs={9} md={6} className='mx-auto text-center  mb-3 mb-md-0'>
+        <Col xs={12} md={6} className='mx-auto text-center  mb-3 mb-md-0'>
+          <Row>
+          <Col xs={2} md={2}>
+          <ThemeToggle onclick={themeToggleHandler}/>
+          </Col>
+          <Col xs={10} md={10}>
           <HeaderUnder1/>
+          </Col>
+          </Row>
         </Col>
         <Col xs={12} md={3} className='mx-auto text-center '>
           <Row className='align-items-center'>

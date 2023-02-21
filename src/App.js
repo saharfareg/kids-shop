@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {Header} from './components/header/header'
 import {MainLayout} from './components/main-layout/main-layout'
@@ -14,26 +13,26 @@ function App() {
   //const[productGirlApp,setproductGirlApp]=useState([...productGirl])
   //const[productBoyApp,setproductBoyApp]=useState([...productBoy])
   //const[allproductsApp,setallproductsApp]=useState([...productGirl,...productBoy])
-
-  const[productGirlApp,setproductGirlApp]=useState([])
-  const[productBoyApp,setproductBoyApp]=useState([])
-
-  const[allproductsApp,setallproductsApp]=useState([])
+  //---------- basket /toast -------------
   const[isShowbag,setisShowbag]=useState(false)
+  const[basket,setbasket]=useState([])
   const [isShowToast,setisShowToast]=useState(false)
-
+  //------ loading / themeDrak -----------
+  const [isLoading, setIsLoading] = useState(true)
+  const [isThemeDark,setisThemeDark] = useState(true)
+  //------------- btn / collapse ----------
   const[btnhambueger,setbtnhambueger]=useState(true)
   const[showcollapse,setshowcollapse]=useState(false)
   const[btncollapseRightSide,setbtncollapseRightSide]=useState(false)
   const[collapseRightSide,setcollapseRightSide]=useState(true)
+  //---------- searchInput---------------
   const[searchInput,setsearchInput]=useState('')
-
+  //----------- products ---------
+  const[allproductsApp,setallproductsApp]=useState([])
+  const[productGirlApp,setproductGirlApp]=useState([])
+  const[productBoyApp,setproductBoyApp]=useState([])
   const[isGirls,setisGirls]=useState(false)
   const[isBoys,setisBoys]=useState(false) 
-  
-  const[genderStatus,setgenderStatus]=useState('all')
-  const[basket,setbasket]=useState([])
-  const [isLoading, setIsLoading] = useState(true)
   //---------  category -----
   const[allCategoriesApp,setallCategoriesApp]=useState([])
   //----------- maincategory ------------------
@@ -43,15 +42,14 @@ function App() {
     console.log(allMaincategories)
   const[allMaincategoriesApp,setallMaincategoriesApp]=useState(allMaincategories) 
     console.log(allMaincategoriesApp)
-
   //----------- subcategory -----
   const[allSubCategoriesApp,setallSubCategoriesApp]=useState([])
   //----------------------
   const loadProducts=()=>{
     axios.get(`${API_URL}/products`).then((res) =>{
       setIsLoading(true)
-    setallproductsApp(res.data)
-    setIsLoading(false)
+      setallproductsApp(res.data)
+      setIsLoading(false)
     })
   }
     useEffect(()=>{
@@ -60,16 +58,13 @@ function App() {
         
   const alldata={
     allproductsApp,setallproductsApp,
-
     productGirlApp,setproductGirlApp,
     productBoyApp,setproductBoyApp,
     allCategoriesApp,setallCategoriesApp,
     isGirls,setisGirls,
     isBoys,setisBoys,
-    genderStatus,setgenderStatus,
     allMaincategoriesApp,setallMaincategoriesApp,
     allSubCategoriesApp,setallSubCategoriesApp,
-
     isShowbag,setisShowbag,
     basket,setbasket,
     btnhambueger,setbtnhambueger,
@@ -78,7 +73,8 @@ function App() {
     collapseRightSide,setcollapseRightSide,
     searchInput,setsearchInput,
     isShowToast,setisShowToast,
-    isLoading, setIsLoading
+    isLoading, setIsLoading,
+    isThemeDark,setisThemeDark
   }
 
   return (

@@ -32,6 +32,16 @@ input[type="checkbox"] {
 
 .width-50{width: 50%;}
 
+
+.back-light{
+  background-color: white;
+  color:black
+}
+.back-dark{
+   background-color: black;
+   color:white
+}
+
 @media (max-width: 992px){
   .width-50{width: 100%;}
 }

@@ -6,6 +6,7 @@ import {ProductsContext} from '../../../context/products-context'
 
 export const RightSide = () => {
   const alldataRightSide=useContext(ProductsContext)
+  
   const collapsehandler=()=>{
     alldataRightSide.setbtncollapseRightSide(!alldataRightSide.btncollapseRightSide)
     alldataRightSide.setcollapseRightSide(!alldataRightSide.collapseRightSide)
@@ -15,7 +16,7 @@ export const RightSide = () => {
       
       <Container>
         <Row>
-        <h3 className="fs-6 text-center">جستجوی پیشرفته</h3>
+        <h3 className="fs-6 text-center ">جستجوی پیشرفته</h3>
         </Row>
         <Row>
           <Col className={`${rightStyle['filter-data']} }`}>
@@ -28,7 +29,7 @@ export const RightSide = () => {
             {alldataRightSide.collapseRightSide && (
               <>
               <Row>
-              <Col className={`${rightStyle['items']} }`}>
+              <Col className={`${rightStyle['items']} text-body`}>
                 <lable className={`${rightStyle['lable']} }`}>
                   <input type='checkbox' className='me-2 check-box-color'/>
                   پوشاک

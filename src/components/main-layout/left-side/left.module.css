@@ -25,7 +25,9 @@
     display: flex;
     justify-content: center;
 }
-
+.cardcustom{
+    color: black;
+}
 .card-botton-style{
     display: block;
     width: 100%;

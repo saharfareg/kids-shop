@@ -1,10 +1,8 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card';
 import { Container,Row,Col } from 'react-bootstrap'
 import { useContext } from 'react';
 import {ProductsContext} from '../../../context/products-context'
 import { Product } from './product';
-import { Loading } from '../../loading/loading';
 export const LeftProducts=()=> {
   const LeftProducts=useContext(ProductsContext)
   

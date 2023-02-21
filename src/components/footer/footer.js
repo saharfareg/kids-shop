@@ -9,16 +9,13 @@ export const Footer = () => {
     <>
     <Container fluid className={`${footerStyle['footer-container']}`}>
         <Row className='px-2 py-4'>
-			<Col md={5}>
-				<div >
+			<Col xs={12} lg={5}>
 					<h4 className='text-center fColor3 py-3  border-bottom'>اطلاعات تماس</h4>
 					<p className='mt-5'><b>آدرس کارخانه :</b> آزادراه کرج قزوین - شهرک صنعتی هشتگرد</p>
 					<p><b>ساعات کاری :</b> شنبه تا چهارشنبه ۸ الی ۱۷ - پنجشنبه ۸ الی  ۱۳</p>
 					<p><b>پست الکترونیک :</b> safiraco@yahoo.com</p>
 					<p><b> تلفن : </b>۴۴۲۲۲۰۰۱ _۰۲۶</p>
 					<p><b>تلفکس : </b>۴۴۲۲۶۸۰۱ _۰۲۶</p>
-					
-				</div>
             </Col>    
             <Col xs={12} lg={4} className=''>
 					<h4 className='text-center fColor3 py-3 mb-5 border-bottom'>شبکه های اجتماعی</h4>
