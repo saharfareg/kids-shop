@@ -8,19 +8,18 @@
 .basket{    
         position: absolute;
         left: 0;
-      
-        width: 400px;
-        height: 67vh;
+        width: 320px;
+        height: 44vh;
         z-index: 999;
-       
+       padding: 25px 14px;
         background: #fff;
-        top: 110px;
+        top: 197px;
         overflow-y: scroll;
         box-shadow: 0 1px 1px rgb(0 0 0 / 14%), 0 4px 8px rgb(0 0 0 / 30%);
         border-radius: 4px;
       }
 .shoping-icon{
-        background-color: darkorange;
+        background-color: var(--maincolor3);
         color: white;
         border-radius: 5px;
         padding: 6px;
@@ -28,13 +27,30 @@
 .f-color-white{
         color: white;
 }
-.button-form:hover{
-        background-color: var(--maincolor3) !important ;
-         color:white}
+
+
+.row-basket{
+        border-bottom: 1px solid gainsboro;
+        align-items: center;
+        margin-top: 10px;
+}       
 /**animation heartbeat*/
 .animate:hover {
 	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;
 	        animation: heartbeat 1.5s ease-in-out infinite both;
+}
+.a-login{
+        background-color: var(--maincolor3);
+        color: white;
+        cursor: pointer;
+        padding: 0.2em 0.6em;
+        text-decoration: none;
+        border-radius: 5px;
+}
+
+.btn-custom:focus{
+        border-radius: none !important;
+        box-shadow: none !important;
 }
   @keyframes heartbeat {
     from {
@@ -70,4 +86,45 @@
               animation-timing-function: ease-out;
     }
   }
-  
+.input-custom{
+        border-top-right-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+        border-color:var(--maincolor3) !important;
+}
+.btn-custom{
+        margin-left: -1px;
+        border-top-left-radius: 5px !important;
+        border-bottom-left-radius: 5px !important;
+        background-color: var(--maincolor3) !important ;
+        color:white !important}
+
+.btn-custom:hover{
+        background-color:  white !important;
+        color:var(--maincolor3)  !important;
+        border-color:var(--maincolor3) !important;
+} 
+
+     
+
+.input-custom:focus {
+        color: #212529;
+        background-color: #fff;
+        border-color:var(--maincolor3) !important;
+        outline: 0;
+        box-shadow: 0 0 0 0.08rem var(--maincolor3) !important;
+         }
+         .input-custom::placeholder{
+                color: var(--maincolor3) !important;
+                opacity: 1
+         }
+         .basket-a{ 
+                cursor: pointer;
+                color: #fff;
+                background-color: var(--maincolor3);
+                min-width: 160px;
+                padding: 11px 11px;
+                font-size: 1rem;
+                font-weight: 500;
+                line-height: 1.5;
+                text-decoration: none;
+            }

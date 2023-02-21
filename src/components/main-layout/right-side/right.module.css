@@ -11,3 +11,24 @@
 .span-ul-open{
     background-image: url(./ul-image-open.gif);
 }
+.items {
+    max-height: 25vh;
+    overflow: auto;
+    margin-top: 2px;
+}
+.lable{
+    display: block;
+    cursor: pointer;
+    margin: 15px 5px;
+    padding-top: 5px;
+    font-size: 1.1rem;
+}
+.filter-data {
+    box-shadow: 1px 3px 17px -10px #696969;
+    padding: 15px;
+    border-radius: 16px;
+}
+.row-container{
+    display: flex;
+    justify-content: space-between;
+}

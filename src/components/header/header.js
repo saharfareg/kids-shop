@@ -11,85 +11,72 @@ import {productGirl} from '../../datas/girls/datas-girls'
 import {productBoy} from '../../datas/boys/datas-boys'
 import { FaShoppingCart } from 'react-icons/fa';
 import {MyBasket} from './mybasket'
-
+import pic1 from  './abr-sefid-.jpg'
+import axios from 'axios'
+import { useEffect } from 'react';
+import { API_URL } from '../../constants/constants';
 export const Header = () => {
-
   const alldataHeader= useContext(ProductsContext)
 
-  const girlshandler=()=>{
-    
-    alldataHeader.setisBoys(false)
-    alldataHeader.setisGirls(true)
-    alldataHeader.setgenderStatus('girls')
+  //const loadProducts=()=>{
+   // axios.get(`${API_URL}/products`).then((res) =>{
+   // alldataHeader.setallproductsApp(res.data)
+    //})
+  //}
+  //useEffect(()=>{
+  //  loadProducts()
+  //},[])
+ //-------------- 
+  const genderHandler=(gender)=>{
+    alldataHeader.setallproductsApp(alldataHeader.allproductsApp.filter(product=>product.category=== gender))
   }
-  const boysshandler=()=>{
-  
-    alldataHeader.setisBoys(true)
-    alldataHeader.setisGirls(false)
-    alldataHeader.setgenderStatus('boys')
-  }
-//--------------
-  const shoeshandlerboys=(gender,shoes)=>{
-    //console.log(alldataHeader.maincategoryApp)
-    //alldataHeader.setmaincategoryApp(['shoes'])
-    //console.log(alldataHeader.maincategoryApp)
-    
-    alldataHeader.setisBoys(true)
-    alldataHeader.setisGirls(false)
-    alldataHeader.setgenderStatus('boys')
+//--------------------------------
+  const shoeshandler=(gender,maincategory)=>{
     console.log(alldataHeader.allproductsApp)
-    console.log([...new Set(alldataHeader.allproductsApp.map(pr=>pr.category))])
-    alldataHeader.setallMaincategoriesApp([...new Set(alldataHeader.allproductsApp.map(pr=>pr.category))])
-  
-    console.log(alldataHeader.allMaincategoriesApp)
-
+    alldataHeader.setallproductsApp(alldataHeader.allproductsApp.filter((product=>product.category===gender  &&  product.maincategory===maincategory)))
   }
-  const shoeshandlergirls=(gender,shoes)=>{
-    alldataHeader.setmaincategoryApp(['shoes'])
-    console.log(alldataHeader.maincategoryApp)
-    alldataHeader.setisBoys(false)
-    alldataHeader.setisGirls(true)
-    alldataHeader.setgenderStatus('girls')
-  }
- 
+  useEffect(()=>{
+    
+  },[alldataHeader.allproductsApp])
 
+
+//-----------------
   const showbasket=()=>{
     console.log('basket')
     alldataHeader.setisShowbag(!alldataHeader.isShowbag)
   }
-
+//-------------------
   return (
     <>
     <MyNavBar></MyNavBar>
     <Container fluid >
-      <Row className='mb-3 align-items-center'> 
-        <Col xs={1} md={3} className='mx-auto text-center'>
-          
-        </Col>   
-        <Col xs={9} md={6} className='mx-auto text-center'>
+      <Row className='mb-3 align-items-center'>    
+        <Col xs={9} md={6} className='mx-auto text-center  mb-3 mb-md-0'>
           <HeaderUnder1/>
         </Col>
-        <Col xs={2} md={3} className='mx-auto text-center'>
-          <Row>
-            <Col></Col>
-            <Col></Col>
-            <Col>
-            <a className={`${headerStyle['shoping-icon']}`} onClick={showbasket} title='سبد خرید'> <FaShoppingCart className={`${headerStyle['f-color-white']}`}></FaShoppingCart> </a>
+        <Col xs={12} md={3} className='mx-auto text-center '>
+          <Row className='align-items-center'>
+            <Col xs={9} md={9}>
+              <a className={`${headerStyle['a-login']} `}>
+                <span> ورود | عضویت</span>
+              </a>
+            </Col>
+            <Col xs={3} md={3} >
+            <a className={`${headerStyle['shoping-icon']} transform-scale`} onClick={showbasket} title='سبد خرید'> <FaShoppingCart className={`${headerStyle['f-color-white']} `}></FaShoppingCart> </a>
           {alldataHeader.isShowbag && (
             <MyBasket></MyBasket>
           )}
             </Col>
           </Row>
-         
         </Col>
       </Row>
       <Row>
         <Col md={9} className='mx-auto text-center'>
           <Row>
-            <HeaderUnder2 onclick={girlshandler} title={'دخترانه'} src={'/images/icons/girl-icon.png'} />
-            <HeaderUnder2 onclick={shoeshandlergirls.bind(this,'girls','shoes')} title={'کفش دخترانه'} src={'/images/icons/show-girl-icon.png'} />
-            <HeaderUnder2 onclick={boysshandler} title={'پسرانه'} src={'/images/icons/boy-icon.png'} />
-            <HeaderUnder2 onclick={shoeshandlerboys.bind(this,'boys','shoes')} title={'کفش پسرانه'} src={'/images/icons/show-boy-icon.png'} />
+            <HeaderUnder2 onclick={genderHandler.bind(this,'girls')} title={'دخترانه'} src={'/images/icons/girl-icon.png'} />
+            <HeaderUnder2 onclick={shoeshandler.bind(this,'girls','shoes')} title={'کفش دخترانه'} src={'/images/icons/show-girl-icon.png'} />
+            <HeaderUnder2 onclick={genderHandler.bind(this,'boys')} title={'پسرانه'} src={'/images/icons/boy-icon.png'} />
+            <HeaderUnder2 onclick={shoeshandler.bind(this,'boys','shoes')} title={'کفش پسرانه'} src={'/images/icons/show-boy-icon.png'} />
           </Row>
         </Col>
       </Row>

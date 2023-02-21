@@ -41,20 +41,26 @@
     top: 0;
     z-index: 9;
     cursor: pointer;
-    background-color: darkorange;
+    background-color:var(--maincolor3);
     color: white;
 }
 .badg-costum:hover{
    
-    background-color: darkorange;
+    background-color: var(--maincolor3);
     color: black;
 }
 .badg-off{ 
      bottom: 1px;
     z-index: 9;
     left: 0;
-    color: darkorange !important;;
+    color: var(--maincolor3) !important;;
     padding: 6px;
     background-color: white !important;
     border-radius: 5px;
+}
+.price-container{
+    background: #f4f4f4;
+    text-align: center;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 10px 4px -9px #00000025;
 }

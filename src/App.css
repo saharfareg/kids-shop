@@ -7,10 +7,35 @@
     url("./fonts/Vazir.woff")format('woff'),
     url("./fonts/Vazir.woff2")format('woff2');
 }
-*{direction: rtl;font-family: 'vazir';--maincolor1:#ae0b4f;--maincolor2:midnightblue;--maincolor3:darkorange;scroll-behavior: smooth}
+*{direction: rtl;font-family: 'vazir';--maincolor1:#ae0b4f;--maincolor2:midnightblue;--maincolor3:#9370DB;scroll-behavior: smooth}
 .maincolor1{background-color: var(--maincolor1) !important;}
 .maincolor2{background-color: var(--maincolor2) !important ;}
 .maincolor3{background-color: var(--maincolor3) !important ;}
+
+.fColor3{color:var(--maincolor3) !important}
 .fs-8 {
   font-size: 0.8rem!important;
 }
+.fs-13{font-size: 13px;}  
+.width-auto{width: auto !important;}
+.width-fit-content{width: fit-content !important;}
+.transform-scale:hover{
+  transform: scale(1.5);
+  transition: 1s;
+}
+input[type="checkbox"] {
+  background: var(--maincolor3);    
+}
+.check-box-color{
+  accent-color: #9b59b6
+}
+::placeholder {
+  color: red;
+  opacity: 1; /* Firefox */
+}
+.width-50{width: 50%;}
+
+@media (max-width: 992px){
+  .width-50{width: 100%;}
+}
+

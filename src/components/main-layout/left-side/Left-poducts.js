@@ -10,20 +10,9 @@ export const LeftProducts=()=> {
   return (
     
     <Row sm={2} md={3} lg={4} className="g-4">
-      {LeftProducts.genderStatus==='all' &&
-      LeftProducts.allproductsApp.map(pr=>(
-        <Product src={pr.img} price={pr.price} subtitle={pr.subtitle}/>
+      {LeftProducts.allproductsApp.map(pr=>(
+        <Product key={pr.id} src={pr.img} price={pr.price} subtitle={pr.subtitle} id={pr.id}/>
       ))}
-      {LeftProducts.isGirls && LeftProducts.genderStatus==='girls' &&
-        LeftProducts.productGirlApp.map(pr=>(
-          <Product src={pr.img} price={pr.price} subtitle={pr.subtitle} />
-        ))
-      }
-      {LeftProducts.isBoys && LeftProducts.genderStatus==='boys' &&
-        LeftProducts.productBoyApp.map(pr=>(
-          <Product src={pr.img} price={pr.price} subtitle={pr.subtitle} />
-        ))
-      }
     </Row>
   );
 }

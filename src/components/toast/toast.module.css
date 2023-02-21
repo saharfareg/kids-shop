@@ -1,0 +1,14 @@
+.toast-custom{
+    position: fixed;
+    bottom: 0vh;
+    color:white !important
+    ;
+}
+.btn-toast-custom{   
+     position: relative;
+    bottom: 7px;
+   
+}
+.btn-toast-custom:focus{
+    box-shadow: none !important;
+}
