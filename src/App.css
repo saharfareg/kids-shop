@@ -23,9 +23,7 @@
   transform: scale(1.5);
   transition: 1s;
 }
-input[type="checkbox"] {
-  background: var(--maincolor3);    
-}
+
 .check-box-color{
   accent-color: #9b59b6
 }
@@ -46,3 +44,10 @@ input[type="checkbox"] {
   .width-50{width: 100%;}
 }
 
+.Typewriter>span{font-size: 1.9rem;}
+.success{
+  border:1px solid green !important
+}
+.error{
+  border:1px solid red !important
+}

@@ -3,11 +3,13 @@ import {CloseButton} from 'react-bootstrap';
 import '../../App.css'
 import toastStyle from './toast.module.css'
 import {ProductsContext} from '../../context/products-context'
+//import {MainContext} from '../main-layout/context/main-context'
 import { useContext } from 'react';
 export const MyToast =()=> {
   const alldataMyToast =useContext(ProductsContext)
+  
   const btncloseHandler=()=>{
-    alldataMyToast.setisShowToast(false)
+    alldataMyToast.setIsShowToast(false)
   }
   return (
     <>

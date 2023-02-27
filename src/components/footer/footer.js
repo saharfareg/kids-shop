@@ -19,7 +19,7 @@ export const Footer = () => {
             </Col>    
             <Col xs={12} lg={4} className=''>
 					<h4 className='text-center fColor3 py-3 mb-5 border-bottom'>شبکه های اجتماعی</h4>
-					<Row class="footer-social mt-5">
+					<Row className="footer-social mt-5">
 						<ul className="list-group list-group-flush d-flex flex-row  justify-content-around">
 							<li className="list-group-item bg-transparent border-0 px-0" ><a href="mailto:support@aeingostar.com" target="new" className={`${footerStyle['envelope']} ${footerStyle['social-icon']} p-3  `}><BsFillEnvelopeFill /></a></li>
 							<li className="list-group-item bg-transparent  border-0 px-0"><a href="https://www.instagram.com/aeingostar" target="new" className= {`${footerStyle['instagram']} ${footerStyle['social-icon']} p-3  `}><BsInstagram className='text-dark'/> </a></li>

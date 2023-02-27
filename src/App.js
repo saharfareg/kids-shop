@@ -1,22 +1,23 @@
 import './App.css';
+//import axios from 'axios';
 import {Header} from './components/header/header'
 import {MainLayout} from './components/main-layout/main-layout'
 import {ProductsContext} from './context/products-context'
-import { useEffect, useState } from 'react';
-import {productGirl} from './datas/girls/datas-girls'
-import {productBoy} from './datas/boys/datas-boys'
-import axios from 'axios'
-import { API_URL } from './constants/constants';
+import { Children, useState } from 'react';
+//import { API_URL } from './constants/constants';
 import {Footer} from './components/footer/footer'
 import { MyToast } from './components/toast/toast';
+import { Route, Routes, useRoutes } from 'react-router-dom';
+import {NotFound} from './components/page-not-found/not-found'
+import {MoreInfo} from './components/main-layout/more-info-product/more-info'
+//import datas from './data.json'
+import {AboutUs} from './components/about-us/about-us'
+import {ContactUs} from './components/contact-us/contact-us'
+import {allRoutes} from './routes'
 function App() {
-  //const[productGirlApp,setproductGirlApp]=useState([...productGirl])
-  //const[productBoyApp,setproductBoyApp]=useState([...productBoy])
-  //const[allproductsApp,setallproductsApp]=useState([...productGirl,...productBoy])
-  //---------- basket /toast -------------
-  const[isShowbag,setisShowbag]=useState(false)
-  const[basket,setbasket]=useState([])
-  const [isShowToast,setisShowToast]=useState(false)
+ 
+  const[isShowbag,setIsShowbag]=useState(false)
+  const[basket,setBasket]=useState([])
   //------ loading / themeDrak -----------
   const [isLoading, setIsLoading] = useState(true)
   const [isThemeDark,setisThemeDark] = useState(true)
@@ -25,63 +26,48 @@ function App() {
   const[showcollapse,setshowcollapse]=useState(false)
   const[btncollapseRightSide,setbtncollapseRightSide]=useState(false)
   const[collapseRightSide,setcollapseRightSide]=useState(true)
-  //---------- searchInput---------------
-  const[searchInput,setsearchInput]=useState('')
-  //----------- products ---------
-  const[allproductsApp,setallproductsApp]=useState([])
-  const[productGirlApp,setproductGirlApp]=useState([])
-  const[productBoyApp,setproductBoyApp]=useState([])
-  const[isGirls,setisGirls]=useState(false)
-  const[isBoys,setisBoys]=useState(false) 
-  //---------  category -----
-  const[allCategoriesApp,setallCategoriesApp]=useState([])
-  //----------- maincategory ------------------
-  const maincategoryRepeated=allproductsApp.map(pr=>pr.maincategory)
-    console.log(maincategoryRepeated) 
-  const allMaincategories=['all',...new Set(maincategoryRepeated)]
-    console.log(allMaincategories)
-  const[allMaincategoriesApp,setallMaincategoriesApp]=useState(allMaincategories) 
-    console.log(allMaincategoriesApp)
-  //----------- subcategory -----
-  const[allSubCategoriesApp,setallSubCategoriesApp]=useState([])
-  //----------------------
-  const loadProducts=()=>{
-    axios.get(`${API_URL}/products`).then((res) =>{
-      setIsLoading(true)
-      setallproductsApp(res.data)
-      setIsLoading(false)
-    })
-  }
-    useEffect(()=>{
-      loadProducts()
-    },[])
-        
+  
+ 
+  const [isShowToast,setIsShowToast]=useState(false)
+
   const alldata={
-    allproductsApp,setallproductsApp,
-    productGirlApp,setproductGirlApp,
-    productBoyApp,setproductBoyApp,
-    allCategoriesApp,setallCategoriesApp,
-    isGirls,setisGirls,
-    isBoys,setisBoys,
-    allMaincategoriesApp,setallMaincategoriesApp,
-    allSubCategoriesApp,setallSubCategoriesApp,
-    isShowbag,setisShowbag,
-    basket,setbasket,
+    isShowbag,setIsShowbag,
+    basket,setBasket,
     btnhambueger,setbtnhambueger,
     showcollapse,setshowcollapse,
     btncollapseRightSide,setbtncollapseRightSide,
     collapseRightSide,setcollapseRightSide,
-    searchInput,setsearchInput,
-    isShowToast,setisShowToast,
+    
     isLoading, setIsLoading,
-    isThemeDark,setisThemeDark
+    isThemeDark,setisThemeDark,
+    isShowToast,setIsShowToast
   }
-
+/*let routes=useRoutes([
+  { path:'/' , element:<MainLayout/>},
+  { path:'/contact-us', element:<ContactUs/>},
+  { path:'/about-us/*', element:<AboutUs/> , Children:[
+    {path:'dashboard', element:<p> به داشبورد خوش آمدید</p>}
+  ]},
+  { path:'/products' , element:<MainLayout/>},
+  { path:'/product/:productID', element:<MoreInfo/>},
+  { path:'*' , element:<NotFound/>}
+])*/
+let routes=useRoutes(allRoutes)
   return (
  <>
- <ProductsContext.Provider value={alldata}>
+<ProductsContext.Provider value={alldata}>
     <Header></Header>
-    <MainLayout></MainLayout>
+    {routes}
+    {/* <Routes>
+        <Route path='/' element={<MainLayout/>}/>
+        <Route path='/contact-us' element={<ContactUs/>}/>
+        <Route path='/about-us/*' element={<AboutUs/>}>
+          <Route path='dashboard' element={<p> به داشبورد خوش آمدید</p>}/>
+        </Route>
+        <Route path='/products' element={<MainLayout/>}/>
+        <Route path='/product/:productID' element={<MoreInfo/>}/>
+        <Route path='*' element={<NotFound/>}/>
+    </Routes> */}
     <Footer/>
     <MyToast/>
  </ProductsContext.Provider>

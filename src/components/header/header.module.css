@@ -1,10 +1,4 @@
-.img-header{
-    padding: 8% 8%;
-    border: 2px solid #f1f1f1;
-    border-radius: 50%;
-    text-align: center;
-    border-color:var(--maincolor3);
-}
+
 .basket{    
         position: absolute;
         left: 0;
@@ -35,10 +29,7 @@
         margin-top: 10px;
 }       
 /**animation heartbeat*/
-.animate:hover {
-	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;
-	        animation: heartbeat 1.5s ease-in-out infinite both;
-}
+
 .a-login{
         background-color: var(--maincolor3);
         color: white;
@@ -52,40 +43,7 @@
         border-radius: none !important;
         box-shadow: none !important;
 }
-  @keyframes heartbeat {
-    from {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-transform-origin: center center;
-              transform-origin: center center;
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    10% {
-      -webkit-transform: scale(0.91);
-              transform: scale(0.91);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    17% {
-      -webkit-transform: scale(0.98);
-              transform: scale(0.98);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-    33% {
-      -webkit-transform: scale(0.87);
-              transform: scale(0.87);
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
-    }
-    45% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out;
-    }
-  }
+ 
 .input-custom{
         border-top-right-radius: 5px !important;
         border-bottom-right-radius: 5px !important;
@@ -127,4 +85,7 @@
                 font-weight: 500;
                 line-height: 1.5;
                 text-decoration: none;
+            }
+            .active-link{
+                border-bottom:1px solid var(--maincolor3)
             }

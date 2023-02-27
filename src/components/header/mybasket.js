@@ -13,7 +13,7 @@ export const MyBasket = () => {
     <div  className={`${headerStyle['basket']}`} > 
     <Container>
     {alldataMyBasket.basket.map(pr=>(
-      <Basketproduct src={pr.img} price={pr.price} subtitle={pr.subtitle} id={pr.id} material={pr.material}/>
+      <Basketproduct src={pr.img} price={pr.price} subtitle={pr.subtitle} id={pr.id} material={pr.material} count={pr.count}/>
     ))}
     </Container>
     <Row className='mt-5 align-items-center'>

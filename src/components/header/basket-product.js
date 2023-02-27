@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { Container,Row,Col } from 'react-bootstrap'
 import headerStyle from './header.module.css'
 
-export const Basketproduct = ({src,price,subtitle,id,material}) => {
+export const Basketproduct = ({src,price,subtitle,id,material,count}) => {
   return (
 <>
   <Row className={`${headerStyle['row-basket']}`}>
@@ -11,10 +11,10 @@ export const Basketproduct = ({src,price,subtitle,id,material}) => {
       <img src={src} className="img-fluid rounded-start" alt={subtitle}/>
     </Col>
     <Col xs={7} className="mt-3">
-      <h6 class="mb-3">{subtitle} </h6>
-      <p ><span class="fs-13">{price}</span></p>
-      <p class="fs-13">تعداد : 1</p>
-      <p class=""><small class="text-muted">جنس : {material}</small></p>
+      <h6 className="mb-3">{subtitle} </h6>
+      <p ><span className="fs-13">{price}</span></p>
+      <p className="fs-13">تعداد :{count}</p>
+      <p className=""><small className="text-muted">جنس : {material}</small></p>
     </Col>
   </Row>
 </>

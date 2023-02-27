@@ -12,7 +12,7 @@
     background-image: url(./ul-image-open.gif);
 }
 .items {
-    max-height: 25vh;
+    max-height: 35vh;
     overflow: auto;
     margin-top: 2px;
 }
@@ -31,4 +31,8 @@
 .row-container{
     display: flex;
     justify-content: space-between;
+}
+.accordion-header>button:after{
+    position: absolute;
+left:15px !important
 }
