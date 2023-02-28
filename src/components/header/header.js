@@ -22,7 +22,7 @@ export const Header = () => {
   }
 //--------- themetoggle----------
 const themeToggleHandler =(e) =>{ 
- //e.target.checked ? (console.log('dark')) : (console.log('light'))
+ e.target.checked ? (console.log('dark')) : (console.log('light'))
  alldataHeader.setisThemeDark(!alldataHeader.isThemeDark)
 }
 
@@ -58,7 +58,7 @@ const themeToggleHandler =(e) =>{
         </Col>
       </Row>
     </Container>
-    <img src={pic} alt='under-header'/>
+      <img className='position-absolute ' src={pic} alt='under-header'/>
     </>
   )
 }

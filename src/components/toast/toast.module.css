@@ -1,8 +1,8 @@
 .toast-custom{
     position: fixed;
     bottom: 0vh;
-    color:white !important
-    ;
+    color:white !important;
+    z-index: 999;
 }
 .btn-toast-custom{   
      position: relative;

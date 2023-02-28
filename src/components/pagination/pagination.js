@@ -3,10 +3,10 @@ import { Container,Row } from 'react-bootstrap'
 export const MyPagination=()=> {
   return (
     <>
-    <Container className='text-center'>
+    <Container className='text-center my-5'>
         <Row >
-        <nav aria-label="Page navigation example">
-          <ul className="pagination">
+        <nav aria-label="Page navigation example ">
+          <ul className="pagination mx-auto">
             <li className="page-item">
               <a className="page-link" href="#" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
