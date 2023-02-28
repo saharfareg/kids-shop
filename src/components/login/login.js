@@ -20,6 +20,7 @@ export const Login = () => {
                         <label htmlFor="exampleInputEmail1" className="form-label"> نام کاربری یا ایمیل : </label>
                         <Input element='input' type="email" className="form-control" id="exampleInputEmail1" placeholder='ایمیل خود را وارد نمایید' />
                     </div>
+           
                     <div className="mb-3">
                         <label htmlFor="exampleInputPassword1" className="form-label">رمز عبور : </label>
                         <Input element='input' type="password" className="form-control" id="exampleInputPassword1"/>
