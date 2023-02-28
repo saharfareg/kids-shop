@@ -21,7 +21,8 @@ export const MyBasket = () => {
     </Container>
     <Row className='mt-5 align-items-center'>
       <Col xs={5}>
-        <div>مبلغ قابل پرداخت:{alldataMyBasket.basketTotalPrice} تومان</div>
+        <div>مبلغ قابل پرداخت:{alldataMyBasket.basketTotalPrice} تومان
+        </div>
         <div className='fColor3 fw-bold'></div>
       </Col>
       <Col xs={7}>

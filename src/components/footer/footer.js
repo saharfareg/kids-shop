@@ -3,7 +3,9 @@ import { Container,Row ,Col} from 'react-bootstrap'
 import footerStyle from './footer.module.css'
 import { BsTelegram,BsInstagram ,BsWhatsapp,BsTwitter,BsFillEnvelopeFill} from "react-icons/bs";
 import locationImg from './location.jpg'
-
+import { FaArrowCircleUp } from 'react-icons/fa';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 export const Footer = () => {
   return (
     <>
@@ -47,6 +49,14 @@ export const Footer = () => {
 				</Row>
 			</Col>
         </Row>
+		
+		<OverlayTrigger
+          overlay={<Tooltip id="tooltip-disabled">برو بالا</Tooltip>}
+        >
+		<a href='#top' className='go-up'> 
+			<FaArrowCircleUp className='fs-1 '/>
+		</a>
+        </OverlayTrigger>
     </Container>
     </>
   )

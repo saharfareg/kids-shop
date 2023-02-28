@@ -86,3 +86,13 @@ direction: ltr;
   float: right !important;
  
 }
+.swiper {
+
+  height: auto !important
+}
+.go-up{
+  position: fixed;
+    bottom: 10px;
+    z-index: 999;
+    color:var(--maincolor3)
+}

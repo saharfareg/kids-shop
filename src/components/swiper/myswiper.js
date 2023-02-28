@@ -9,6 +9,7 @@ import "./styles.css";
 import { Container, Row } from "react-bootstrap";
 import datas from '../../data.json'
 import { Product } from "../main-layout/left-side/product";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 export  const MySwiper= ({propNewest})=>{
     const[popularProducts,setPopularProducts]=useState([])
@@ -21,18 +22,36 @@ export  const MySwiper= ({propNewest})=>{
     <>
     <Container>
         <Row>
-          <Swiper
-            slidesPerView={4}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
-            loop={true}
-            className="mySwiper "
-          >
+        <Swiper
+        slidesPerView={1}
+        spaceBetween={10}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay, Navigation]}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 50,
+          },
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        className="mySwiper card-group"
+      >
           {propNewest==='new' ? (
             allProducts.map(newProduct=>(
-              <SwiperSlide key={newProduct.id} className='h-100'>
+              <SwiperSlide key={newProduct.id} className='card h-100'>
                   <Product  toLinkProp={`/product/${newProduct.id}`} key={newProduct.id} src={newProduct.img} price={newProduct.price} subtitle={newProduct.subtitle} id={newProduct.id} />
               </SwiperSlide>
           ))
